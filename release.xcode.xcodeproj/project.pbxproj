@@ -750,14 +750,13 @@
 					"\"$(SRCROOT)/deps\"",
 				);
 				"HEADER_SEARCH_PATHS[arch=*]" = (
-					/Users/jie/git/node/deps/v8/include,
+					$SRCROOT/deps/v8/include,
 					"$SRCROOT/deps/glm/**",
 					$SRCROOT/deps/libpng15,
 					$SRCROOT/deps/freetype,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../git/node/deps/v8/out/x64.debug\"",
 					"\"$(SRCROOT)/deps/v8\"",
 					"\"$(SRCROOT)/..\"",
 					"\"$(SRCROOT)/deps/freetype\"",
@@ -782,16 +781,13 @@
 					"\"$(SRCROOT)/deps\"",
 				);
 				"HEADER_SEARCH_PATHS[arch=*]" = (
-					/Users/jie/xcodespace/v8/v8/include,
+					$SRCROOT/deps/v8/include,
 					"$SRCROOT/deps/glm/**",
 					$SRCROOT/deps/libpng15,
 					$SRCROOT/deps/freetype,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../git/node/deps/v8/out/x64.debug\"",
-					"\"$(SRCROOT)/deps/v8\"",
-					"\"$(SRCROOT)/..\"",
 					"\"$(SRCROOT)/deps/freetype\"",
 					"\"$(SRCROOT)/../freetype-gl-read-only/windows/AntTweakBar/lib\"",
 					"\"$(SRCROOT)/../freetype-gl-read-only/windows/freetype\"",

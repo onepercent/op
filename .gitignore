@@ -27,3 +27,11 @@ proguard/
 *.ipr
 *.iws
 .idea/
+
+libv8_nosnapshot.x64.a
+libv8_base.x64.a
+libv8_snapshot.a
+
+release.android/objs
+release.android/assets
+release.android/jni

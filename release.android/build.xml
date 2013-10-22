@@ -1,0 +1,46 @@
+<project name="precompile" default="build">
+	<property name="projectdir" location="." />
+	<!-- 
+	<property name="rawbuild" value="true" />
+	-->
+	<property name="ndk_root" value="/Users/username/environment/android-ndk-r8d" />
+	<property name="NDK_MODULE_PATH" value="${ndk_root}:${projectdir}/dependence" />
+
+	<target name="syn_js">
+		<mkdir dir="${projectdir}/assets" />
+		<delete>
+			<fileset dir="${projectdir}/assets" />
+		</delete>
+		<copy todir="${projectdir}/assets" overwrite="true">
+			<fileset dir="${projectdir}/../v8/assets" />
+		</copy>
+	</target>
+	<target name="syn_cpp" if="rawbuild">
+		<mkdir dir="${projectdir}/assets" />
+		<delete>
+			<fileset dir="${projectdir}/assets" />
+		</delete>
+		<copy todir="${projectdir}/assets" overwrite="true">
+			<fileset dir="${projectdir}/../v8/assets" />
+		</copy>
+		<copy todir="${projectdir}/jni" overwrite="true">
+			<fileset dir="${projectdir}/../v8" excludes="demo*.*" includes="**/*.cpp,**/*.h,**/*.c" />
+		</copy>
+		<copy todir="${projectdir}/jni" overwrite="true">
+			<fileset dir="${projectdir}/android_cpp" />
+		</copy>
+	</target>
+	<target name="build" depends="syn_js,syn_cpp">
+		<exec executable="${ndk_root}/ndk-build">
+			<arg line="-C ${projectdir}" />
+			<arg line="NDK_MODULE_PATH=${NDK_MODULE_PATH}" />
+			<arg line="NDK_DEBUG=0" />
+			<arg line="V=1" />
+			<arg line="NDK_LOG=1" />
+			<arg line="STRIP=" />
+			<arg line="-j6" />
+		</exec>
+		<!--
+		-->
+	</target>
+</project>

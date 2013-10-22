@@ -1,0 +1,1 @@
+module.exports = require('framework/texture.js').R;
